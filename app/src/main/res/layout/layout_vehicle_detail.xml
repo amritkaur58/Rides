@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp">
+
+
+        <LinearLayout
+            android:id="@+id/vinTV"
+            style="@style/LayoutAlignedView"
+            android:background="@drawable/border_grey_stroke"
+            android:padding="8dp">
+
+            <TextView
+                style="@style/headingStyle"
+                android:text="@string/vin" />
+
+            <TextView
+                android:id="@+id/vinValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/makeLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vinTV"
+            android:layout_margin="8dp"
+            android:background="@drawable/border_grey_stroke"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="1">
+
+            <TextView
+                style="@style/headingStyle"
+                android:text="@string/make_model" />
+
+            <TextView
+                android:id="@+id/makeValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/colorLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/makeLL"
+            android:layout_margin="8dp"
+            android:background="@drawable/border_grey_stroke"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="1">
+
+            <TextView
+                style="@style/headingStyle"
+                android:text="@string/color" />
+
+            <TextView
+                android:id="@+id/colorValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/carType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/colorLL"
+            android:layout_margin="8dp"
+            android:background="@drawable/border_grey_stroke"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="1">
+
+            <TextView
+                style="@style/headingStyle"
+                android:text="@string/car_type" />
+
+            <TextView
+                android:id="@+id/typeValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/clickBT"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_below="@+id/carType"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/click" />
+    </RelativeLayout>
+</layout>

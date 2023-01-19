@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Rides</string>
+    <string name="fragment_splash">Fragment Splash</string>
+    <string name="number_of_items">Enter number of items</string>
+    <string name="retrieve">Retrieve</string>
+    <string name="make_model">make_and_model</string>
+    <string name="vin">vin</string>
+    <string name="color">Color</string>
+    <string name="car_type">Car Type</string>
+    <string name="click">Click</string>
+    <string name="carbon_emissions">Carbon emissions</string>
+</resources>
