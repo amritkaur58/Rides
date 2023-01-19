@@ -42,4 +42,4 @@ Using git, create a new branch named additional_requirements from base_requireme
 2. Display a button on the Vehicle Details screen and when pressed: 
 
 • Display a bottom sheet 
-• On the bottom sheet display an estimated carbon emissions based on the vehicles kilometrage returned from the API,
+• On the bottom sheet display an estimated carbon emissions based on the vehicles kilometrage returned from the API.
