@@ -7,4 +7,6 @@
     <string name="vin">vin</string>
     <string name="color">Color</string>
     <string name="car_type">Car Type</string>
+    <string name="click">Click</string>
+    <string name="carbon_emissions">Carbon emissions</string>
 </resources>

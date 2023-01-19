@@ -31,11 +31,13 @@ class VehicleListFragment : BaseFragment<FragmentVehicleListBinding, AppViewMode
     }
 
     private fun getVehicleList() {
+        idSwipeToRefresh.setOnRefreshListener {
+            idSwipeToRefresh.isRefreshing = false
+            checkListUpdate()
+        }
         listBT.setOnClickListener {
 
-            if (countET.text?.isEmpty() == true) {
-                showToast("Please enter count number", activity)
-            } else {
+            if (checkTextRange(countET.text.toString())) {
                 pBar.visibility = View.VISIBLE
                 viewModel.getVehicleList(countET.text.toString().toInt())
                     .observe(this, Observer { vehicleList ->
@@ -56,6 +58,46 @@ class VehicleListFragment : BaseFragment<FragmentVehicleListBinding, AppViewMode
             }
 
         }
+
+    }
+
+    private fun checkListUpdate() {
+
+        if (checkTextRange(countET.text.toString())) {
+            pBar.visibility = View.VISIBLE
+            viewModel.getVehicleList(countET.text.toString().toInt())
+                .observe(this, Observer { vehicleList ->
+                    try {
+                        vehicleList?.sortedBy { it.vin }
+                        pBar.visibility = View.GONE
+                        adapter = vehicleList?.let { VehicleAdapter(it, navController) }!!
+                        adapter.notifyDataSetChanged()
+
+                    } catch (e: java.lang.Exception) {
+                        e.printStackTrace()
+                    }
+
+                })
+
+        }
+
+    }
+
+    fun checkTextRange(countET: String): Boolean {
+        when {
+            countET.isBlank() -> {
+                showToast("Please enter value", context)
+                return false
+            }
+            countET.toInt() in 1..100 -> {
+                return true
+            }
+            else -> {
+                showToast("Value is not in range", context)
+                return false
+            }
+        }
+        return countET.toInt() in 1..100
 
     }
 }

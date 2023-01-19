@@ -36,6 +36,7 @@ class VehicleAdapter(
             bundle.putString(Utils.MAKE_MODEL, itemViewModel.makeAndModel)
             bundle.putString(Utils.COLOR, itemViewModel.color)
             bundle.putString(Utils.CAR_TYPE, itemViewModel.carType)
+            bundle.putInt(Utils.KILO_METERS, itemViewModel.kilometrage!!)
             Utils.navigateUsingPopUp(navController, R.id.vehicleList, R.id.vehicleDetail, bundle)
 
         }
