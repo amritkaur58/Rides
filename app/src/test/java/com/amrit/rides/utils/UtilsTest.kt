@@ -12,7 +12,6 @@ class UtilsTest {
 
         val result =  calculateEmission(5000.0)
         val expected  = 5000.0
-
         assertEquals(expected,result,0.001)
     }
 }
